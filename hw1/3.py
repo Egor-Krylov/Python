@@ -1,7 +1,7 @@
 print("Введите первую координату: ")
-x = int(input())
+x = float(input())
 print("Введите вторую координату: ")
-y = int(input())
+y = float(input())
 
 if (x > 0 and y > 0):
     print("первая четверть")
