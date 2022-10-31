@@ -37,6 +37,7 @@ else:
 print(f'Первым ходит {players[firstMovePlayer]}')
 
 while candies > 0:
+    moveCandies = 0
     playerToMove = (moveCount + firstMovePlayer) % 2
     while not (0 < moveCandies < 29):
         if (regime == 0) or (regime == 1 and playerToMove == 0):
@@ -45,14 +46,13 @@ while candies > 0:
             moveCandies = GetBotNextMove(candies)
             print(f'бот "Сладкоежка-M" забирает {moveCandies} конфет')
             
+    moveCount += 1
     if (candies - moveCandies) > 0:
         candies -= moveCandies 
         print(f'Осталось конфет: {candies}')
     else:
         print(f'Осталось 0 конфет, {players[playerToMove]} победил!')
         candies = 0
-    moveCount += 1
-    moveCandies = 0
 
 
 
